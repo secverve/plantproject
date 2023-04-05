@@ -1,17 +1,9 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-
-const LeeApp = () => {
-  return (
-    <div>
-      <h1>LeeApp Component</h1>
-    </div>
-  );
-};
+import LeeApp from './lee';
 
 const NoticeWriteComponent = ({ onEditorChange, onSubmit }) => {
   const [desc, setDesc] = useState("");
@@ -75,13 +67,6 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<LeeApp />} />
-          <Route path="/test1" element={<LeeApp />} />
-          <Route path="/test2" element={<LeeApp />} />
-        </Routes>
-      </BrowserRouter>
       <h1 className="app-title">식구2</h1>
       <form onSubmit={handleSubmit} className="app-form">
         <select className="app-select">
@@ -105,5 +90,6 @@ const App = () => {
     </div>
   );
 };
+
 
 export default LeeApp;
