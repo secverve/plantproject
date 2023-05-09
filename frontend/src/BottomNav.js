@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./BottomNav.css";
 // 사용할 아이콘 import
-import { FaHandHoldingUsd,  } from "react-icons/fa";
+import { FaHandHoldingUsd  } from "react-icons/fa";
 import { RiPlantFill } from "react-icons/ri";
 import { BsChatDots } from "react-icons/bs";
 import { BiCategoryAlt } from "react-icons/bi";

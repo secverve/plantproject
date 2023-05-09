@@ -1,33 +1,86 @@
-
 .TopNav {
-   height: 20px;
-    padding: 1rem;
-    color: white;
-    background: teal;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-      top: 0;
-      /* width: 100% */
-      left: 0;
-      right: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* nav태그 아래의 자식들을 수평정렬하기 위한 설정 */
-nav {
-  overflow: hidden;
-  border-top: 2px solid grey;
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
-/* nav태그 아래의 div태그들을 수평정렬 및 세로길이 설정 */
-.nav > div {
-  /* 수평정렬, 5개의 button을 각각 20% width만큼 할당 */
-  float: left;
-  width: 50%;
-  text-align: center;
 
-  /* 세로길이 설정 */
-  height: 45px;
-  line-height: 45px;
+.menu-container {
+  display: flex;
+  align-items: center;
 }
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0s linear 0.3s;
+}
+
+.menu.open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s;
+  }
+
+  .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu li {
+    margin: 0.5rem 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .TopNav {
+      flex-direction: column;
+    }
+
+    .menu-container {
+      position: relative;
+    }
+
+    .menu {
+      position: static;
+      margin-top: 0.5rem;
+      opacity: 1;
+      visibility: visible;
+      box-shadow: none;
+    }
+  }
